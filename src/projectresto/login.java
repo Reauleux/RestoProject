@@ -35,50 +35,61 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txtnama = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtnama = new javax.swing.JTextField();
+        txtpass = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("LOGIN");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(170, 30, 130, 30);
-        getContentPane().add(txtnama);
-        txtnama.setBounds(160, 80, 170, 30);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("PASSWORD");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 130, 130, 30);
-        getContentPane().add(txtpass);
-        txtpass.setBounds(160, 130, 170, 30);
+        jPanel2.setLayout(null);
 
-        jButton1.setText("SignIn");
+        jLabel4.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
+        jLabel4.setText("LOGIN KASIR");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(130, 10, 130, 30);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(0, -5, 390, 50);
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(220, 180, 80, 30);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(60, 160, 270, 30);
+        jPanel1.add(txtnama);
+        txtnama.setBounds(160, 70, 170, 30);
+        jPanel1.add(txtpass);
+        txtpass.setBounds(160, 110, 170, 30);
 
-        jButton3.setText("Exit");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(80, 180, 80, 30);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
         jLabel6.setText("USERNAME");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(60, 80, 130, 30);
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(60, 70, 130, 30);
 
-        setSize(new java.awt.Dimension(408, 309));
+        jLabel5.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        jLabel5.setText("PASSWORD");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(60, 110, 130, 30);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 390, 250);
+
+        setSize(new java.awt.Dimension(408, 255));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,10 +154,11 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtnama;
     private javax.swing.JTextField txtpass;
     // End of variables declaration//GEN-END:variables
