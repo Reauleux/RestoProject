@@ -40,7 +40,6 @@ public class login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtpass = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
@@ -68,20 +67,11 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(250, 180, 80, 30);
-
-        jButton2.setText("SignUp");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(50, 180, 80, 30);
+        jButton1.setBounds(220, 180, 80, 30);
 
         jButton3.setText("Exit");
         getContentPane().add(jButton3);
-        jButton3.setBounds(150, 180, 80, 30);
+        jButton3.setBounds(80, 180, 80, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("USERNAME");
@@ -92,46 +82,26 @@ public class login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String username = txtnama.getText();
-        String password = txtnama.getText();
-        
-        try{
-            try(Statement statement = (Statement) file_koneksi.GetConnection().createStatement()){
-                statement.executeUpdate("insert into tb_akun(username, password) VALUES ('"+username+"','"+password+"');");
-            }
-            JOptionPane.showMessageDialog(null, "Selamat! anda berhasil SignUp!");
-        }catch(Exception t){
-            JOptionPane.showMessageDialog(null, "Mohon Maaf! Ulangi Lagi Prosedur!");
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Connection connection;
         PreparedStatement ps;
-        
         try{
-          connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/db_resto?zeroDateTimeBehavior=convertToNull","root","");
-          ps = connection.prepareStatement("SELECT'username', 'password' FROM 'tb_akun' WHERE 'username' = ? AND 'password' = ?");
-          ps.setString(1, txtnama.getText());
-          ps.setString(2, txtpass.getText());
-          ResultSet result = ps.executeQuery();
-          if(result.next()){
-              new frmMain().show();
-              this.dispose();
-          }else{
-              JOptionPane.showMessageDialog(rootPane,"Salah!");
-              txtpass.setText("");
-              txtnama.requestFocus();
-              new frmMain().show();
-              this.dispose();
-          }
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(rootPane, "Gagal!");
-            new frmMain().show();
-              this.dispose();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_resto", "root", "");
+            ps = connection.prepareStatement("SELECT username, password FROM tb_akun WHERE username = ? AND password = ?");
+            ps.setString(1, txtnama.getText());
+            ps.setString(2, txtpass.getText());
+            ResultSet result = ps.executeQuery();
+            if (result.next()) {
+                new frmMain().show();
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Salah!");
+                txtnama.setText("");
+                txtpass.requestFocus();
+            }
+        } catch (SQLException ex){
+            JOptionPane.showMessageDialog(rootPane, "gagal");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -173,7 +143,6 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
