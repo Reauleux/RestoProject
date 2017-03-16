@@ -1,14 +1,5 @@
 ## Aplikasi Restoran
 
-## Hayo mau nyolong script ya, Sesungguhnya Allah maha melihat kawan :)
-
-## Identitas
-* Nama  : Seshar Joses Wicaksono
-* Kelas : XIRPL6
-* Absen : 34
-* NIS   : 4833/1552.070
-* Sekolah : SMK Telkom Malang
-
 ## Screenshot Aplikasi
 
 ## Screenshot Login
